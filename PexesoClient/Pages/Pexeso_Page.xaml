@@ -1,0 +1,55 @@
+﻿<Page x:Class="PexesoClient.Pages.Pexeso_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PexesoClient.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Pexeso_Page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{Binding TimeLeft, StringFormat=Time left {0:ss}}" Grid.Row="0" HorizontalAlignment="Center" FontSize="25"/>
+
+        <Grid x:Name="Grid_Pexeso" Grid.Row="1"/>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Text="Points" HorizontalAlignment="Center" FontSize="30" Margin="10"/>
+            <TextBlock x:Name="TextBox_Competitor" Text="{Binding Competitor}" FontSize="20" HorizontalAlignment="Center" Margin="10,20,10,10"/>
+            <TextBlock x:Name="TextBox_CompetitorPoints" Text="{Binding CompetitorPoints}" FontSize="25" HorizontalAlignment="Center"/>
+
+            <TextBlock x:Name="TextBox_Challenger" Text="{Binding Challenger}" FontSize="20" HorizontalAlignment="Center" Margin="10,50,10,10"/>
+            <TextBlock x:Name="TextBox_ChallengerPoints" Text="{Binding ChallengerPoints}" FontSize="20" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer  >
+                <TextBlock  x:Name="TextBlock_Chat" Background="AliceBlue"/>
+            </ScrollViewer>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="TextBox_Message" Grid.Column="0" KeyDown="TextBox_Message_KeyDown"/>
+                <Button x:Name="Button_Send" Grid.Column="1" Content="Send" Click="Button_Send_Click"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Page>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="PexesoClient.Login_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PexesoClient"
+        mc:Ignorable="d"
+        Title="Login Window" Height="200" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="NickName" HorizontalAlignment="Center" Margin="5"/>
+        <TextBox  Grid.Row="1" HorizontalAlignment="Center" Width="150" Margin="5" x:Name="TextBox_NickName"/>
+
+        <TextBlock Grid.Row="2"  Text="Password" HorizontalAlignment="Center" Margin="5"/>
+        <PasswordBox  Grid.Row="3" HorizontalAlignment="Center" Width="150" Margin="5" x:Name="TextBox_Password"/>
+
+        <Button  Grid.Row="4" Content="Log in" Margin="10" Width="150" x:Name="Button_LogIn" Click="Button_LogIn_Click"/>
+    </Grid>
+</Window>
